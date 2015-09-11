@@ -4,7 +4,7 @@
             "id": "1",
             "name": "LAMP",
             "image-id": "0b07b3ed-9195-4b84-ae8a-6443c3c0a9d1",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/lamp.png",
             "cloudinit": false,
             "code": {
@@ -70,7 +70,7 @@
             "id": "5",
             "name": "Wordpress",
             "image-id": "5c1b5ac9-6de7-415b-8e69-a4fb4fb17646",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/wordpress.png",
             "cloudinit": false,
             "code": {
@@ -152,7 +152,7 @@
             "id": "10",
             "name": "File Server",
             "image-id": "173f9c14-3a6b-45af-acdc-5fabd8e48786",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/fileserver.jpg",
             "cloudinit": false,
             "code": {
@@ -221,18 +221,24 @@
             "icon": "https://swift-mm1.mascloud.es/v1.0/AUTH_1eefab5d51f541ad9204fa322afa48c6/images/plesk12.jpg",
             "cloudinit": false,
             "code": {
-                "variables": {},
-                "content": "#cloud-config\nchpasswd:\n list: |\n   root:stackops\n   ubuntu:stackops\n expire: False\nssh_pwauth: True\ndisable_root: false\nruncmd:\n- sed -i 's/without-password/yes/' /etc/ssh/sshd_config\n- service ssh restart"
+                "variables": {
+                    "ROOT_PASS": {
+                        "value": "userpass",
+                        "constraint": ""
+                    },
+                },
+                "content": "#!/bin/bash -e\nresize2fs /dev/vda\ncat>/etc/inithooks.conf<<EOF\nexport HUB_APIKEY=SKIP\nexport ROOT_PASS=userpass\nexport SEC_UPDATES=FORCE\nexport DB_PASS=dbpass\nEOF"
             },
+
             "labels": {
                 "en": {
                     "resume": "Plesk. Web Hosting panel control",
-                    "description": "Simple and Secure Web Server and Website Management Tools for Web Professionals. Based on the Ubuntu 14.04 LTS.",
+                    "description": "Simple and Secure Web Server and Website Management Tools for Web Professionals. Connect to Plesk vi https://IP_Server:8443. Based on the Ubuntu 14.04 LTS.",
                     "creation_success": "Instancecreated!"
                 },
                 "es": {
                     "resume": "Plesk. Panel de control para web hosting",
-                    "description": "Plesk está diseñado para facilitar a administradores web, desarrolladores de aplicaciones, profesionales web y proveedores de servicios de hosting e infraestructuras la creación de soluciones personalizadas. Basado en Ubuntu 14.04 LTS",
+                    "description": "Plesk está diseñado para facilitar a administradores web, desarrolladores de aplicaciones, profesionales web y proveedores de servicios de hosting e infraestructuras la creación de soluciones personalizadas. Una vez arrancada la máquina, localiza la IP y configura el plexo mediante https://IP_Servidor:8443 . Basado en Ubuntu 14.04 LTS",
                     "creation_success": "Instancecreated!"
                 }
             },
@@ -282,7 +288,7 @@
             "id": "20",
             "name": "Redmine",
             "image-id": "c85d0ac9-d750-48ef-8471-f20939a1ea71",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/redmine.png",
             "cloudinit": false,
             "code": {
@@ -364,7 +370,7 @@
             "id": "25",
             "name": "Domain Controller",
             "image-id": "3bb8ef13-77a4-4f21-8e81-1888f7faf978",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/domain-controller.jpg",
             "cloudinit": false,
             "code": {
@@ -439,7 +445,7 @@
             "id": "30",
             "name": "Drupal 7",
             "image-id": "1dcbc4ca-cacd-4175-ba74-c23ea55c6cf2",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/drupal.png",
             "cloudinit": false,
             "code": {
@@ -520,7 +526,7 @@
             "id": "35",
             "name": "Owncloud",
             "image-id": "389d2519-647c-4d1e-9ce9-4cfa2f1ac619",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/owncloud.png",
             "cloudinit": false,
             "code": {
@@ -593,7 +599,7 @@
             "id": "40",
             "name": "MySQL",
             "image-id": "06b5c2c9-ece8-455e-98ab-fafae4a3d97b",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/mysql.png",
             "cloudinit": false,
             "code": {
@@ -657,7 +663,7 @@
             "id": "45",
             "name": "Prestashop",
             "image-id": "8bd2d13d-bc68-4793-9d31-bb359036c548",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/prestashop.png",
             "cloudinit": false,
             "code": {
@@ -746,7 +752,7 @@
             "id": "50",
             "name": "Joomla 2.5",
             "image-id": "98490db5-f021-4dac-9919-75d3cacd951d",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/joomla.png",
             "cloudinit": false,
             "code": {
@@ -827,7 +833,7 @@
             "id": "55",
             "name": "Moodle",
             "image-id": "77d25ca2-4343-4f20-ba31-6a6e6db637dd",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/moodle.png",
             "cloudinit": false,
             "code": {
@@ -900,7 +906,7 @@
             "id": "60",
             "name": "MongoDB",
             "image-id": "5e325042-5c54-411e-aa1a-cfb59d326416",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/mongodb.png",
             "cloudinit": false,
             "code": {
@@ -967,7 +973,7 @@
             "id": "65",
             "name": "Bugzilla",
             "image-id": "e5e06c2f-9ba0-48a0-8411-2c34dece8363",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/bugzilla.png",
             "cloudinit": false,
             "code": {
@@ -1047,7 +1053,7 @@
             "id": "70",
             "name": "Magento",
             "image-id": "69480a13-7c01-4635-ae7a-2d69ffb74783",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/magento.png",
             "cloudinit": false,
             "code": {
@@ -1136,7 +1142,7 @@
             "id": "75",
             "name": "SugarCRM",
             "image-id": "bd65894a-af3b-4493-9458-bc5c880731c6",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/sugarcrm.png",
             "cloudinit": false,
             "code": {
@@ -1209,7 +1215,7 @@
             "id": "80",
             "name": "PunBB",
             "image-id": "00b76d85-2811-48af-acad-7ce5e767e48e",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/punbb.png",
             "cloudinit": false,
             "code": {
@@ -1298,7 +1304,7 @@
             "id": "85",
             "name": "phpBB",
             "image-id": "c5577f39-fb0a-4f4b-9124-e1afc3fbfe3a",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/phpbb.png",
             "cloudinit": false,
             "code": {
@@ -1379,7 +1385,7 @@
             "id": "90",
             "name": "Node.js",
             "image-id": "d610251a-d9c4-42c7-98cf-af6a1f1a3cf7",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/nodejs.png",
             "cloudinit": false,
             "code": {
@@ -1435,7 +1441,7 @@
             "id": "95",
             "name": "Ruby on Rails",
             "image-id": "39785d90-9e6f-4860-953c-9115c4ebe63f",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/rubyonrails.png",
             "cloudinit": false,
             "code": {
@@ -1499,7 +1505,7 @@
             "id": "100",
             "name": "Trac",
             "image-id": "3ddfc4d9-4ae1-41a8-b25f-452b3d274fbb",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/trac.png",
             "cloudinit": false,
             "code": {
@@ -1564,7 +1570,7 @@
             "id": "105",
             "name": "LAPP",
             "image-id": "23949495-465f-43c0-89a0-1e79854225d3",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/lapp.jpg",
             "cloudinit": false,
             "code": {
@@ -1629,7 +1635,7 @@
             "id": "110",
             "name": "Tomcat",
             "image-id": "d26e7ed0-ae6b-46c9-91da-6d8b706b54ed",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/tomcat.png",
             "cloudinit": false,
             "code": {
@@ -1702,7 +1708,7 @@
             "id": "115",
             "name": "CouchDB",
             "image-id": "fea08df1-17de-4d5a-9eb3-6a72b8987d37",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/couchdb.png",
             "cloudinit": false,
             "code": {
@@ -1766,7 +1772,7 @@
             "id": "120",
             "name": "PostgreSQL",
             "image-id": "ab7a843e-9f7e-48d4-8cb4-3ef29cb92a01",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/postgresql.png",
             "cloudinit": false,
             "code": {
@@ -1831,7 +1837,7 @@
             "id": "125",
             "name": "Jenkins",
             "image-id": "7f40d754-7cca-4ad3-a360-b5eaf336c21d",
-            "organization": "StackOps Technologies S.L.",
+            "organization": "MasCloud",
             "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/jenkins.png",
             "cloudinit": false,
             "code": {
