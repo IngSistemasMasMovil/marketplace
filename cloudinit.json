@@ -243,7 +243,6 @@
                     "ROOT_PASS": "Contraseña root",
                     "creation_success": "Instancia creada correctamente!”
                 }
-},
             },
             "ports": {
                 "tcp": [
