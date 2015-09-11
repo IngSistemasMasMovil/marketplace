@@ -234,13 +234,16 @@
                 "en": {
                     "resume": "Plesk. Web Hosting panel control",
                     "description": "Simple and Secure Web Server and Website Management Tools for Web Professionals. Connect to Plesk vi https://IP_Server:8443. Based on the Ubuntu 14.04 LTS.",
+                    "ROOT_PASS": "Root password",
                     "creation_success": "Instancecreated!"
                 },
                 "es": {
                     "resume": "Plesk. Panel de control para web hosting",
                     "description": "Plesk está diseñado para facilitar a administradores web, desarrolladores de aplicaciones, profesionales web y proveedores de servicios de hosting e infraestructuras la creación de soluciones personalizadas. Una vez arrancada la máquina, localiza la IP y configura el plexk mediante https://IP_Servidor:8443 . Basado en Ubuntu 14.04 LTS",
-                    "creation_success": "Instancecreated!"
+                    "ROOT_PASS": "Contraseña root",
+                    "creation_success": "Instancia creada correctamente!”
                 }
+},
             },
             "ports": {
                 "tcp": [
