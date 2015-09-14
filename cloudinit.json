@@ -227,7 +227,7 @@
                         "constraint": ""
                     },
                 },
-		"content": "#cloud-config\nchpasswd:\n list: |\n   root:userpass\n   expire: False\ndisable_root: false\nruncmd:\n- sed -i 's/without-password/yes/' /etc/ssh/sshd_config\n- service ssh restart"
+		"content": "#cloud-config\nchpasswd:\n list: |\n   root:userpass\n   expire: False\n disable_root: false\nruncmd:\n- sed -i 's/without-password/yes/' /etc/ssh/sshd_config\n- service ssh restart"
             },
 
             "labels": {
