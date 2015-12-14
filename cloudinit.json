@@ -219,6 +219,50 @@
                 "914"
             ]
         },
+{
+	            "id": "16",
+	            "name": "Windows 2012 R2",
+	            "image-id": "56686163-c804-4f3a-99a4-388a194d98ac",
+	            "organization": "MasMovil.com",
+	            "icon": "http://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/Windows-Server2012R2.jpg",
+	            "cloudinit": false,
+	            "code": {
+	                "variables": "",
+	                "content": ""
+	            },
+	            "labels": {
+	                "en": {
+	                    "resume": "Windows 2012 R2",
+	                    "description": "At the heart of the Microsoft Cloud Platform vision, Windows Server 2012 R2 brings Microsoft’s experience delivering global-scale cloud services into your infrastructure with new features and enhancements in virtualization, management, storage, networking, virtual desktop infrastructure, access and information protection, the web and application platform, and more.",
+	                    "creation_success": "Instance created successfully. Use the 'administrator' user to log in."
+	                },
+	                "es": {
+	                    "resume": "Windows 2012 R2",
+	                    "description": "Como eje central de la visión de Microsoft Cloud Platform, Windows Server 2012 R2 combina la experiencia de Microsoft en la prestación de servicios en la nube a escala global en una infraestructura junto con las nuevas características y mejoras en la virtualización, la administración, el almacenamiento, las redes, la infraestructura del escritorio virtual (VDI), la protección de la información y del acceso o la plataforma de aplicaciones y web, entre otras.",
+	                    "creation_success": "Instancia creada con éxito. Para entrar, use el usuario 'administrator'."
+	                }
+	            },
+	            "ports": {
+	                "tcp": [
+	                    "80",
+	                    "443",
+	                    "3389",
+	                    "5985",
+	                    "5986"
+	                ],
+	                "udp": [
+	                    "3389"
+	                ],
+	                "icmp": [
+	                    "-1"
+	                ]
+	            },
+	            "flavors": [
+	                "911",
+	                "912",
+	                "913"
+	            ]
+	        },
         {
             "id": "911",
             "name": "Redmine",
