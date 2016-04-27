@@ -1772,6 +1772,78 @@
                 "913",
                 "914"
             ]
+        },
+        {
+            "id": "230",
+            "name": "OpenLDAP",
+            "image-id": "891ac81d-77a5-43e5-8a65-82344cfa90fc",
+            "organization": "StackOps Technologies S.L.",
+            "icon": "https://swift-mm1.mascloud.es/v1.0/AUTH_6e5b81981103492f83511c1785c8e1f8/static/openldap.png",
+            "cloudinit": false,
+            "code": {
+                "variables": {
+                    "ROOT_PASS": {
+                        "value": "userpass",
+                        "constraint": ""
+                    },
+                    "APP_PASS": {
+                        "value": "dcpass",
+                        "constraint": ""
+                    },
+                    "APP_DOMAIN": {
+                        "value": "domain",
+                        "contraint": ""
+                    }
+                },
+                "content": "#!/bin/bash -e\\nresize2fs /dev/vdancat>/etc/inithooks.conf<<EOF\nexport HUB_APIKEY=SKIP\nexport ROOT_PASS=userpass\nexport SEC_UPDATES=FORCE\nexport APP_PASS=dcpass\nexport APP_DOMAIN=domain\nEOF"
+            },
+            "labels": {
+                "en": {
+                    "resume": "Directory service ordered and distributed",
+                    "description": "OpenLDAP is an open source implementation of the Lightweight Directory Access Protocol (LDAP) developed by the OpenLDAP Project, a collaborative effort to develop a robust, commercial-grade, fully featured, and open source LDAP suite of applications and development tools",
+                    "ROOT_PASS": "Root password",
+                    "APP_PASS": "Admin password",
+                    "APP_DOMAIN": "LDAP domain",
+                    "ROOT_PASS_DESC": "Root user password",
+                    "APP_PASS_DESC": "OpenLDAP admin user password ",
+                    "APP_DOMAIN_DESC": "Domain Component to create",
+                    "creation_success": "Instance created!"
+                },
+                "es": {
+                    "resume": "Servicio de directorio ordenado y distribuido",
+                    "description": "OpenLDAP es una implementación de código abierto del Protocolo Ligero de Acceso al Directorio ( LDAP ) desarrollado por el Proyecto OpenLDAP , un esfuerzo de colaboración para desarrollar un sistema robusto, de grado comercial , con todas las funciones y suite de aplicaciones y herramientas de desarrollo de código abierto",
+                    "ROOT_PASS": "Contraseña root",
+                    "APP_PASS": "Contraseña de admin",
+                    "APP_DOMAIN": "Dominio LDAP",
+                    "ROOT_PASS_DESC": "Contraseña para el usuario root",
+                    "APP_PASS_DESC": "Contraseña del usuario admin para OpenLDAP",
+                    "APP_EMAIL_DESC": "Componente de dominio a crear",
+                    "creation_success": "Instancia creada correctamente!"
+                }
+            },
+            "ports": {
+                "tcp": [
+                    "22",
+                    "80",
+		    "389",
+                    "443",
+                    "636",
+                    "12320",
+                    "12321"
+                ],
+                "udp": [
+		    "123"
+                ],
+                "icmp": [
+                    "-1"
+                ]
+            },
+            "flavors": [
+                "911",
+                "912",
+                "913",
+                "914"
+            ]
         }
     ]
 }
